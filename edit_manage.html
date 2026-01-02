@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Stock Record</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-4">
+
+    <h2 class="mb-4">Edit Stock Record</h2>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" name="manage_date" class="form-control" value="{{ manage.manage_date }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input type="text" name="product_name" class="form-control" value="{{ manage.product_name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Stock In (Purchased)</label>
+            <input type="number" class="form-control" value="{{ manage.stock_in }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Stock Out (Sold)</label>
+            <input type="number" class="form-control" value="{{ manage.stock_out }}" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Total Stock</label>
+            <input type="number" class="form-control" value="{{ manage.total_stock }}" readonly>
+        </div>
+
+        <button type="submit" class="btn btn-success">Update</button>
+        <a href="{{ url_for('manage') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+
+</body>
+</html>
